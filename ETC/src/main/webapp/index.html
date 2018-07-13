@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ETC</title>
+</head>
+<body>
+<h3>创建账户</h3>
+<form action="/CreateAccount">
+<input type="text" name="password" placeholder="password" style="width:600px;"/><br/>
+<input type="submit" value="确认"/>
+</form>
+
+<h3>查询账户</h3>
+<form action="/GetAccount">
+<input type="text" name="accountId" placeholder="accountId" style="width:600px;"/><br/>
+<input type="submit" value="确认"/>
+</form>
+
+<h3>查询余额</h3>
+<form action="/GetBalance">
+<input type="text" name="accountId" placeholder="accountId" style="width:600px;"/><br/>
+<input type="submit" value="确认"/>
+</form>
+
+<h3>查询交易信息</h3>
+<form action="/GetTransaction">
+<input type="text" name="txHash" placeholder="txHash" style="width:600px;"/><br/>
+<input type="submit" value="确认"/>
+</form>
+
+<h3>查询交易记录（分页）</h3>
+<form action="/GetRecordByPage">
+<input type="text" name="id" placeholder="id" style="width:600px;"/><br/>
+<input type="text" name="pageSize" placeholder="pageSize" style="width:600px;"/><br/>
+<input type="submit" value="确认"/>
+</form>
+
+<h3>创建交易</h3>
+<form action="/CreateTransaction">
+<input type="text" name="accountId" placeholder="accountId" style="width:600px;"/><br/>
+<input type="text" name="password" placeholder="password" style="width:600px;"/><br/>
+<input type="text" name="toAccountId" placeholder="toAccountId" style="width:600px;"/><br/>
+<input type="text" name="amount" placeholder="amount" style="width:600px;"/><br/>
+<input type="submit" value="确认"/>
+</form>
+
+</body>
+</html>

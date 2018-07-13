@@ -1,0 +1,10 @@
+/build/
+/logs/
+/.settings/
+/out/
+/META-INF/
+.classpath  
+.project  
+/target/
+/.idea/
+deamonGeth.iml

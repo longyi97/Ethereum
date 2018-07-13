@@ -1,0 +1,8 @@
+/build/
+/logs/
+/.settings/
+.classpath  
+.project  
+/target/
+/.idea/
+token.iml
