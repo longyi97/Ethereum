@@ -1,14 +1,13 @@
-package com.ruiec.sms;
+package com.bin.deamonGeth.sms;
 
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
+import com.bin.deamonGeth.util.HttpClientUtils;
+import com.bin.deamonGeth.util.PropertiesUtils;
 import org.apache.log4j.Logger;
-
-import com.ruiec.util.HttpClientUtils;
-import com.ruiec.util.PropertiesUtils;
 
 /**
  * 发送短信服务（云片网）<br>

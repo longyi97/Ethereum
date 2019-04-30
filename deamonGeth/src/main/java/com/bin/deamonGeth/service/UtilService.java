@@ -1,4 +1,4 @@
-package com.ruiec.service;
+package com.bin.deamonGeth.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,6 +6,7 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import com.bin.deamonGeth.util.PropertiesUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.protocol.Web3j;
@@ -16,8 +17,6 @@ import org.web3j.protocol.core.methods.request.Transaction;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.utils.Files;
-
-import com.ruiec.util.PropertiesUtils;
 
 /**
  * 基础功能服务

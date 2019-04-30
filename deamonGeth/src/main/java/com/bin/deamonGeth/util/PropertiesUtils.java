@@ -1,4 +1,4 @@
-package com.ruiec.util;
+package com.bin.deamonGeth.util;
 
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;

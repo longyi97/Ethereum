@@ -1,7 +1,6 @@
-package com.ruiec.service;
+package com.bin.deamonGeth.service;
 
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.net.ConnectException;
 import java.util.Map;
@@ -11,8 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.EthSyncing.Result;
 
-import com.ruiec.sms.YPWSendMsgService;
-import com.ruiec.util.PropertiesUtils;
+import com.bin.deamonGeth.sms.YPWSendMsgService;
+import com.bin.deamonGeth.util.PropertiesUtils;
 
 import net.sf.json.JSONObject;
 
@@ -41,25 +40,21 @@ public class DeamonService {
 	private static volatile int syncErrorConsTimes2 = 0;
 
 	/**
-	 * 启动Geth
+	 * restart Geth
 	 *
 	 * @param filePath
-	 *            bat file location
+	 *            shell file location
 	 * @author bingo
-	 * @date 2018年4月17日 下午2:39:39
 	 */
 	public static void restartGeth(String filePath) {
 		LOGGER.info("开始执行命令：{}", filePath);
 		Process process = null;
 		try {
-			process = Runtime.getRuntime().exec("CMD /C start " + filePath);
+			process = Runtime.getRuntime().exec(filePath);
 			process.waitFor();
 			LOGGER.info("执行完毕");
-			Thread.sleep(Long.valueOf(PropertiesUtils.getProperty("startGeth.sleep")));
-			Runtime.getRuntime().exec("TASKKILL /IM cmd.exe /F");
-			LOGGER.info("关闭其它CMD窗口成功");
 		} catch (Exception e) {
-			LOGGER.error("启动Geth操作异常", e);
+			LOGGER.error("restart geth error", e);
 			throw new RuntimeException(e);
 		} finally {
 			if (null != process) {
@@ -67,6 +62,25 @@ public class DeamonService {
 			}
 		}
 	}
+//	public static void restartGeth(String filePath) {
+//		LOGGER.info("开始执行命令：{}", filePath);
+//		Process process = null;
+//		try {
+//			process = Runtime.getRuntime().exec("CMD /C start " + filePath);
+//			process.waitFor();
+//			LOGGER.info("执行完毕");
+//			Thread.sleep(Long.valueOf(PropertiesUtils.getProperty("startGeth.sleep")));
+//			Runtime.getRuntime().exec("TASKKILL /IM cmd.exe /F");
+//			LOGGER.info("关闭其它CMD窗口成功");
+//		} catch (Exception e) {
+//			LOGGER.error("启动Geth操作异常", e);
+//			throw new RuntimeException(e);
+//		} finally {
+//			if (null != process) {
+//				process.destroy();
+//			}
+//		}
+//	}
 
 	/**
 	 * Geth客户端是否连接
